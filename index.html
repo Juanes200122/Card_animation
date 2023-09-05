@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Russo+One&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgBx" id="imgBx2">
+                <img class="img2" src="image/1.png" alt="Imagen 1">
+            </div>
+            <div class="contentBx">
+                <h2 style="font-family: 'Russo One', sans-serif;;">Control Xbox</h2>
+
+                <div class="color_div" id="color">
+                    <input type="radio" id="color1" name="color" checked>
+                    <label for="color1" class="color-label1"></label>
+
+                    <input type="radio" id="color2" name="color">
+                    <label for="color2" class="color-label2"></label>
+
+                    <input type="radio" id="color3" name="color">
+                    <label for="color3" class="color-label3"></label>
+
+                    <input type="radio" id="color4" name="color">
+                    <label for="color4" class="color-label4"></label>
+                    <!-- Agrega más opciones si es necesario -->
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        const img = document.querySelector('.img2'); // Cambiamos la selección de la imagen
+
+        radioButtons.forEach(radioButton => {
+            radioButton.addEventListener("change", function () {
+                if (this.checked) {
+                    // Cambiar la imagen según el radio button seleccionado
+                    switch (this.id) {
+                        case "color1":
+                            img.src = "image/1.png";
+                            break;
+                        case "color2":
+                            img.src = "image/2.png";
+                            break;
+                        case "color3":
+                            img.src = "image/3.png";
+                            break;
+                        case "color4":
+                            img.src = "image/4.png";
+                            break;
+                        // Agrega más casos aqui
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

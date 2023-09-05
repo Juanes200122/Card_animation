@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700,800, 800i, 900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #131313;
+}
+.container{
+	position: relative;
+}
+.container .card{
+	position: relative;
+	width: 320px;
+	height: 460px;
+	background: #232323;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.container .card:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #51d243;
+	clip-path: circle(140px at 80% 20%);
+	transition: 0.5s ease-in-out;
+}
+.container .card:hover:before{
+	clip-path: circle(300px at 80% -20%);
+}
+.container .card:after{
+	content: "XBOX";
+	position: absolute;
+	top: 40%;
+	left: -20%;
+	font-size: 9em;
+	font-weight: 800;
+	font-style: italic;
+	color: rgba(171, 171, 171, 0.09);
+
+}
+
+
+.container .card .imgBx{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	transition: .5s;
+}
+.container .card:hover .imgBx{
+	top: 0%;
+	transform: translateY(-24%);
+}
+.container .card .imgBx img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(2deg);
+	width: 270px;
+}
+.container .card .contentBx{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	transition: 1s;
+	z-index: 90;
+}
+.container .card:hover .contentBx{  /*============================*/
+	height: 150px;
+
+}
+#color {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+#color1,
+#color2,
+#color3,
+#color4 {
+	background-color: rebeccapurple;
+	color: rebeccapurple;
+	width: 20px;
+	height: 20px;
+}
+h3 {
+	color: white;
+}
+.color_div {
+	display: none;
+}
+
+
+
+.color input {
+	display: flex;
+	flex-direction: column;
+}
+.container .card .contentBx h2{
+	position: relative;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #fff;
+}
+.container .card .contentBx .size,
+.container .card .contentBx .color{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 20px;
+	transition: .5s;
+	opacity: 0;
+	visibility: hidden;
+}
+.container .card:hover .contentBx .size{
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .5s;
+}
+.container .card:hover .contentBx .color{
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .6s;
+}
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3{
+	color: white;
+	font-weight: 300;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-right: 10px;
+}
+.container .card .contentBx .size span{
+	width: 26px;
+	height: 26px;
+	text-align: center;
+	line-height: 26px;
+	font-size: 14px;
+	display: inline-block;
+	color: #111;
+	background: #fff;
+	margin: 0 5px;
+	transition: .5s;
+	color: #111;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.container .card .contentBx .size span:hover{
+	background: #B90000;
+}
+.container .card .contentBx .color span{
+	width: 20px;
+	height: 20px;
+	background: #ff0;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.container .card .contentBx a{
+	display: inline-block;
+	padding: 10px 20px;
+	background: #fff;
+	border-radius: 4px;
+	margin-top: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	color: #111;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: .5s;
+}
+.container .card:hover .contentBx a{
+	opacity: 1;
+	transform: translateY(0px);
+	transition-delay: .7s;
+}
+
+ /* Estilos para las imágenes */
+ #imgBx2 {
+	text-align: center;
+}
+
+.img2 {
+	max-width: 100%;
+	max-height: 300px;
+	transition: opacity 0.3s ease;
+	/* Agregamos una transición para suavizar el cambio de imagen */
+}
+
+.color_div {
+	margin-top: 2%;
+}
+
+/* Estilo para ocultar los radio buttons */
+.color_div input[type="radio"] {
+	display: none;
+}
+
+/* Estilo para las etiquetas de los radio buttons */
+.color-label1,
+.color-label2,
+.color-label3,
+.color-label4 {
+	display: inline-block;
+	padding: 8px 8px;
+	background-color: #5d5d5d;
+	/* Cambia el color de fondo predeterminado */
+	color: #fff;
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+	margin-right: 10px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+/* Estilo para las etiquetas de los radio buttons cuando están seleccionadas */
+.color_div input[type="radio"]:checked+.color-label1 {
+	background-color: white;
+}
+
+.color_div input[type="radio"]:checked+.color-label2 {
+	background-color: #51d243;
+}
+
+.color_div input[type="radio"]:checked+.color-label3 {
+	background-color: rgb(0, 0, 0);
+}
+
+.color_div input[type="radio"]:checked+.color-label4 {
+	background-color: rgb(0, 55, 255);
+}
+
+/* Estilo para ocultar los labels por defecto */
+.color-label1,
+.color-label2,
+.color-label3,
+.color-label4 {
+	display: none;
+}
+
+/* Estilo para mostrar los labels cuando el contenedor está en :hover */
+.container:hover .color-label1,
+.container:hover .color-label2,
+.container:hover .color-label3,
+.container:hover .color-label4 {
+	display: inline-block;
+}
